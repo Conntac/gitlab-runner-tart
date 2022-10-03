@@ -1,0 +1,24 @@
+concurrent = 2
+check_interval = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "tart-driver"
+  url = "https://gitlab.com/"
+  id = 123
+  token = "asdf"
+  token_obtained_at = 2022-10-03T10:27:18Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "custom"
+  builds_dir = "/Users/admin/builds"
+  cache_dir = "/Users/admin/cache"
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+  [runners.custom]
+    prepare_exec = "/Users/ci/gitlab-runner-tart/prepare.sh"
+    run_exec = "/Users/ci/gitlab-runner-tart/run.sh"
+    cleanup_exec = "/Users/ci/gitlab-runner-tart/cleanup.sh"
