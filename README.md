@@ -1,4 +1,4 @@
-# Run GitLab Runner jobs with macOS virtualization
+# Run GitLab Runner jobs with macOS virtualization for Apple Silicon
 
 ## What is this?
 A set of configuration files which allows gitlab-runner to make use of the macOS virtualization framework.
@@ -9,7 +9,7 @@ The macOS virtualization framework allows running two macOS virtual machines in 
 Clone this repository onto your build machine and register a `custom` gitlab-runner to your instance. 
 You need to adjust the paths in `prepare_exec`, `run_exec` and `cleanup_exec` which can also be found in `gitlab-runner-example-config.toml`.
 
-Install dependencies: `brew install gitlab-runner daemonize tart`.
+Install dependencies: `brew install gitlab-runner daemonize cirruslabs/cli/tart`.
 
 ## Configurations
 - `TART_IMAGE`: Choose a different tart image, e.g. from https://github.com/orgs/cirruslabs/packages?tab=packages&q=macos. The current default is `ghcr.io/cirruslabs/macos-monterey-xcode:14`.
