@@ -14,8 +14,14 @@ tart clone "$VM_IMAGE" "$VM_ID"
 # Update VM configuration
 tart set "$VM_ID" --cpu 4 --memory 8192
 
+# Ensure shared directories exist before starting a VM
+mkdir -p ~/{builds,cache}
+
 # Run the VM in background
-daemonize $(brew --prefix)/bin/tart run "$VM_ID" --no-graphics
+daemonize $(brew --prefix)/bin/tart run "$VM_ID" \
+    --no-graphics \
+    --dir=builds:~/builds \
+    --dir=cache:~/cache
 
 # Wait for VM to get IP
 echo 'Waiting for VM to get IP'

@@ -12,8 +12,9 @@ check_interval = 0
   token_obtained_at = 2022-10-03T10:27:18Z
   token_expires_at = 0001-01-01T00:00:00Z
   executor = "custom"
-  builds_dir = "/Users/admin/builds"
-  cache_dir = "/Users/admin/cache"
+  builds_dir = "/Volumes/My Shared Files/builds"
+  cache_dir = "/Volumes/My Shared Files/cache"
+  builds_dir_is_shared = true
   [runners.custom_build_dir]
   [runners.cache]
     [runners.cache.s3]
@@ -24,3 +25,4 @@ check_interval = 0
     cleanup_exec = "/Users/ci/gitlab-runner-tart/cleanup.sh"
   [runners.feature_flags]
     FF_RESOLVE_FULL_TLS_CHAIN = false
+    FF_ENABLE_JOB_CLEANUP = true
