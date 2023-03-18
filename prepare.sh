@@ -48,7 +48,7 @@ for i in $(seq 1 30); do
 done
 
 echo "Updating hostname"
-_ssh "sudo scutil --set HostName $VM_ID && sudo scutil --set ComputerName $VM_ID"
+_ssh "sudo scutil --set HostName $VM_ID && sudo scutil --set ComputerName $VM_ID && sudo scutil --set LocalHostName $VM_ID && sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $VM_ID"
 
 echo "Installing gitlab-runner for artifact uploads"
 _ssh "brew install gitlab-runner"
