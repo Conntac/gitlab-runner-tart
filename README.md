@@ -11,5 +11,7 @@ You need to adjust the paths in `prepare_exec`, `run_exec` and `cleanup_exec` wh
 
 Install dependencies: `brew install gitlab-runner daemonize cirruslabs/cli/tart`.
 
+Ensure your host system has an SSH private key. If not, create one using `ssh-keygen -t ed25519`.
+
 ## Configurations
 - The image can be selected using Gitlab-CI's `image:` tag. Choose a different tart image, e.g. from https://github.com/orgs/cirruslabs/packages?tab=packages&q=macos. The current default is `ghcr.io/cirruslabs/macos-monterey-xcode:14`.

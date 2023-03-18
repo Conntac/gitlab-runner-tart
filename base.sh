@@ -7,6 +7,9 @@ VM_IMAGE="${CUSTOM_ENV_CI_JOB_IMAGE:-$VM_IMAGE_FALLBACK}"
 VM_USER="admin"
 VM_PASSWORD="admin"
 
+# Load SSH keys from the host.
+ssh-add
+
 _get_vm_ip() {
     tart ip "$VM_ID" --wait 30 || true
 }
@@ -16,5 +19,5 @@ _get_vm_pid() {
 }
 
 _ssh() {
-    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$VM_USER"@"$VM_IP" "/bin/zsh --login -c '$@'" >/dev/null 
+    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/tmp/$VM_ID "$VM_USER"@"$VM_IP" "/bin/zsh --login -c '$@'" >/dev/null 
 }
