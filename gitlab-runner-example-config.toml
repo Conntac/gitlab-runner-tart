@@ -22,3 +22,5 @@ check_interval = 0
     prepare_exec = "/Users/ci/gitlab-runner-tart/prepare.sh"
     run_exec = "/Users/ci/gitlab-runner-tart/run.sh"
     cleanup_exec = "/Users/ci/gitlab-runner-tart/cleanup.sh"
+  [runners.feature_flags]
+    FF_RESOLVE_FULL_TLS_CHAIN = false
