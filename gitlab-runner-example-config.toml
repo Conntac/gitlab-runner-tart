@@ -25,3 +25,4 @@ check_interval = 0
     cleanup_exec = "/Users/ci/gitlab-runner-tart/cleanup.sh"
   [runners.feature_flags]
     FF_RESOLVE_FULL_TLS_CHAIN = false
+    FF_ENABLE_JOB_CLEANUP = true
