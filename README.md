@@ -1,3 +1,6 @@
+# 🚨 Maintainance notice 🚨
+This project has been replaced by a more official implementation of cirruslabs at https://github.com/cirruslabs/gitlab-tart-executor and will not be maintained anymore.
+
 # Run GitLab Runner jobs with macOS virtualization for Apple Silicon
 
 ## What is this?
@@ -15,3 +18,6 @@ Ensure your host system has an SSH private key. If not, create one using `ssh-ke
 
 ## Configurations
 - The image can be selected using Gitlab-CI's `image:` tag. Choose a different tart image, e.g. from https://github.com/orgs/cirruslabs/packages?tab=packages&q=macos. The current default is `ghcr.io/cirruslabs/macos-monterey-xcode:14`.
+
+## References
+- Related GitLab.org issue: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/29319
